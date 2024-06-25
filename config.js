@@ -9,7 +9,7 @@ function convertToBool(text, fault = 'true') {
 const toBool = (x) => (x && x.toLowerCase() === 'true') || false;
 
 global.apikey = {'https://api.adithyan.xyz': 'free'}
-global.apiUrl = 'https://api.adithyan.xyz/'
+global.apiUrl = 'https://hermit-api.koyeb.app/'
 
 const DATABASE_URL = process.env.DATABASE_URL === undefined ? './database.db' : process.env.DATABASE_URL
 process.env.NODE_OPTIONS = '--max_old_space_size=2560'
@@ -32,12 +32,12 @@ module.exports = {
     BOT_INFO: process.env.BOT_INFO || 'ʜᴇʀᴍɪᴛ;ᴀᴅɪᴛʜyᴀɴ;972528277755;https://i.imgur.com/6oRG106.jpeg',
     AUDIO_DATA: process.env.AUDIO_DATA === undefined ? 'ʜᴇʀᴍɪᴛ;ᴀᴅɪᴛʜyᴀɴ;https://i.imgur.com/fj2WE83.jpeg' : process.env.AUDIO_DATA,
     STICKER_DATA: process.env.STICKER_DATA === undefined ? 'ʜᴇʀᴍɪᴛ;ᴀᴅɪᴛʜyᴀɴ' : process.env.STICKER_DATA,
-    ERROR_MESSAGE: toBool(process.env.ERROR_MESSAGE), 
+    ERROR_MESSAGE: process.env.ERROR_MESSAGE === undefined ? true : toBool(process.env.ERROR_MESSAGE), 
     SONG_THUMBNAIL: toBool(process.env.SONG_THUMBNAIL),
     WARN: process.env.WARN || '4',
     EXPRESS: toBool(process.env.EXPRESS),
     REJECT_CALL: toBool(process.env.REJECT_CALL),
-    KOYEB_API_KEY: process.env.KOYEB_API_KEY || '',
+    KOYEB_API_KEY: process.env.KOYEB_API_KEY || false,
     KOYEB_APP_NAME: process.env.KOYEB_APP_NAME || '',
     TERMUX_VPS: toBool(process.env.TERMUX || process.env.VPS),
     AUTO_STATUS_VIEW: toBool(process.env.AUTO_STATUS_VIEW),
